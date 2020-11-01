@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+
+{% block app_content %}
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col">Times</th>
+			<th scope="col">Pontos</th>
+			<th scope="col">Jogos</th>
+			<th scope="col">Vitórias</th>
+			<th scope="col">Empates</th>
+			<th scope="col">Derrotas</th>
+			<th scope="col">Gols Prós</th>
+			<th scope="col">Gols Contras</th>
+			<th scope="col">Saldo de Gols</th>
+			<th scope="col">Cartões Amarelos</th>
+			<th scope="col">Cartões Vermelhos</th>
+		</tr>
+	</thead>
+	<!-- variaveis retiradas ->>> main ->>> arquivo auxiliar.py -->
+	<tbody>
+		{% for time in times %}
+		<tr>
+			<td><img class="escudo-mini" src="{{ time.escudo }}"></td>
+			<td>{{time.nome}}</td>
+			<td>{{time.pontos}}</td>
+			<td>{{time.jogos}}</td>
+			<td>{{time.vitorias}}</td>
+			<td>{{time.empates}}</td>
+			<td>{{time.derrotas}}</td>
+			<td>{{time.gols_pro}}</td>
+			<td>{{ time.gols_contra }}</td>
+			<td>{{ time.saldo_gols }}</td>
+			<td>{{time.cartoes_amarelos}}</td>
+			<td>{{time.cartoes_vermelhos}}</td>
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>
+{% endblock %}
