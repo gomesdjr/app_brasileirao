@@ -2,7 +2,7 @@
 
 {% block app_content %}
 
-<a href="{{ url_for('times.create') }}" class="btn btn-default">Novo time</a>
+<a href="{{ url_for('times.create') }}" class="btn btn-primary">Novo time</a>
 <br>
 <br>
 <div class="container">
@@ -11,8 +11,8 @@
 		 <li class="list-group-item col-md-4 borderless text-center">
 			<img class="escudo-mini" src="{{ time.escudo }}"> 
 			{{ time.nome }}
-             <a href="{{ url_for('times.update', id=time.id) }}">edit</a>
-             <a href="{{ url_for('times.delete', id=time.id) }}">delete</a>
+             <a href="{{ url_for('times.update', id=time.id) }}">Editar</a>
+             <a href="{{ url_for('times.delete', id=time.id) }}">Deletar</a>
 		 </li>
 		{% endfor %}
 	</ul>
