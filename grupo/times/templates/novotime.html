@@ -7,27 +7,13 @@
 	{{ form.hidden_tag() }}
 	<div class="container">
 	<div class="row">
-		<div class="col-md-4">
-			{{ form.nome_time.label }} {{ form.nome_time(size=32) }}
-			{{ form.escudo.label }} {{ form.escudo(size=32) }}
-			{{ form.enviar() }}
+		<div class="col-md-3">
+			{{ form.nome_time.label }} {{ form.nome_time(class="form-control size=2") }}
+			{{ form.escudo.label }} {{ form.escudo(class="form-control") }}
+			{{ form.enviar(class="btn btn-success") }}
 		</div>
 	</div>
-</div>
+	</div>
 </form>
 
 {% endblock %}
-<!--  for
-<form action="" method="POST" novalidate>
-	{{ form.hidden_tag() }}
-	<div class="form-group">
-	{{ form.nome_time.label }}
-    <input type="text" class="form-control" id="formGroupExampleInput">
-	</div>
-	<div class="form-group">
-	{{ form.escudo.label }}
-    <input type="text" class="form-control" id="formGroupExampleInput">
-	</div>
-	{{ form.enviar() }}
-</form>
--->

@@ -2,18 +2,18 @@
 
 {% block app_content %}
 
-<a href="{{ url_for('times.create') }}" class="btn btn-primary">Novo time</a>
+<a href="{{ url_for('times.create') }}" class="btn btn-success">Novo time</a>
 <br>
 <br>
-<div class="container">
-	<ul class="list-unstyled row">
+<div>
+	<ul class="list-group">
 		{% for time in times %}
-		 <li class="list-group-item col-md-4 borderless text-center">
-			<img class="escudo-mini" src="{{ time.escudo }}"> 
-			{{ time.nome }}
-             <a href="{{ url_for('times.update', id=time.id) }}">Editar</a>
-             <a href="{{ url_for('times.delete', id=time.id) }}">Deletar</a>
-		 </li>
+			<li class="list-group-item">
+				<img class="escudo-mini" src="{{ time.escudo }}"> 
+				{{ time.nome }}
+				<a href="{{ url_for('times.delete', id=time.id) }}" class="btn btn-danger badge">Deletar</a>
+				<a href="{{ url_for('times.update', id=time.id) }}" class="btn btn-primary badge">Editar</a>
+			</li>
 		{% endfor %}
 	</ul>
 </div>
