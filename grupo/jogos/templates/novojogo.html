@@ -16,14 +16,19 @@
 	</div>
 {% endif %}
 <!-- Faça o template a partir daqui-->
-<form action=""></form>
-<div>
+<form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+<div class="placar">
+	<div>{{ form.mandante() }} {{form.gols_mandante(size=1)}} X {{form.gols_visitante(size=1)}} {{ form.visitante() }}</div>
+	<div>{{ form.amarelos_mandante.label }} {{form.amarelos_mandante(size=1)}} | {{form.amarelos_visitante(size=1)}}</div>
+	<div>{{ form.vermelhos_mandante.label }} {{form.vermelhos_mandante(size=1)}} | {{form.vermelhos_visitante(size=1)}}</div>
+</div>
+<div class="selecao_rodada">
+	{{ form.rodada.label }} {{ form.rodada(class="form-group") }}
 	{{ form.data.label }}: {{ form.data() }}
 </div>
-
-{{ form.mandante() }} X {{ form.visitante() }}
-{{ form.enviar() }}
-Fazer o template Aqui
-	
+<div>
+	{{ form.enviar(class="btn btn-success") }}
+</div>
 {% endblock %}
 
