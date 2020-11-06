@@ -26,3 +26,7 @@ a > li{
     display: table;
     margin: 1em auto;
 }*/
+
+.placar {
+    background-color: red;
+}

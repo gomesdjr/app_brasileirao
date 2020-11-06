@@ -1,3 +1,7 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" 
+    integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" 
+	crossorigin="anonymous">
+</script>
 {% extends "base.html"%}
 
 {% block app_content %}
@@ -25,7 +29,7 @@
 			<td><img class="escudo-mini" src="{{ time.escudo }}"></td>
 			<td>{{time.nome}}</td>
 			<td>{{time.pontos}}</td>
-			<td>{{ time.jogos }}</td>
+			<td>{{time.jogos | length}}</td>
 			<td>{{time.vitorias}}</td>
 			<td>{{time.empates}}</td>
 			<td>{{time.derrotas}}</td>
@@ -38,4 +42,39 @@
 		{%endfor%}
 	</tbody>
 </table>
+<a href="#" style="float: right;" onclick="impressao()">Imprimir Tabela</a>
+	<textarea id="dados" style="display: none;">
+		{% for time in times %}
+			{{time.nome}}|{{time.pontos}}|{{time.jogos | length}}|{{time.vitorias}}|{{time.empates}}|{{time.derrotas}}|{{time.gols_pro}}|{{ time.gols_contra }}|{{time.saldo_gols}}|#
+		{%endfor%}
+	</textarea>
+	<script>
+		function impressao() {
+			const doc = new jsPDF({orientation: 'landscape'});
+
+			const texto = document.getElementById('dados').innerText;
+			const arrLinhas = texto.split('#');
+			let conteudo = 'CLASSIFICAÇÃO DO BRASILEIRÃO\n\n';
+			for(let linha=0; linha<arrLinhas.length; linha++) {
+				let arrColunas = arrLinhas[linha].split('|');
+				arrColunas[0] = arrColunas[0].trim().padEnd(20, '*');
+				if(arrColunas[0].indexOf('*') > 0) {
+					conteudo += `Time: ${arrColunas[0]} - `+
+								`P: ${arrColunas[1]} - `+
+								`J: ${arrColunas[2]} - `+
+								`V: ${arrColunas[3]} - `+
+								`E: ${arrColunas[4]} - `+
+								`D: ${arrColunas[5]} - `+
+								`GP: ${arrColunas[6]} - `+
+								`GC: ${arrColunas[7]} - `+
+								`SG: ${arrColunas[8]}\n`;
+				}
+			}
+
+			doc.setFontSize(12);
+			doc.setFont('Courier');
+			doc.text(conteudo, 30, 30),
+			doc.save('tabela.pdf');
+		}
+	</script>
 {% endblock %}
