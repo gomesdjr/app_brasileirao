@@ -14,7 +14,7 @@
 {% extends "base.html"%}
 
 {% block app_content %}
-<a type="button" class="btn btn-success" href="{{ url_for('jogos.create') }}">Adicionar Novo Jogo</a>
+<a class="btn btn-success" href="{{ url_for('jogos.create') }}">Adicionar Novo Jogo</a>
 {% for rodada in jogos %}
 <div>
     <ul class="list-group">
@@ -26,15 +26,13 @@
         <li class="list-group-item d-flex justify-content-between align-items-center">
             {{ jogo.mandante.nome }} {{ jogo.gols_mandante }} x
             {{ jogo.gols_visitante }} {{ jogo.visitante.nome }}
-            <a class="btn btn-danger badge" href="{{ url_for('jogos.delete', id=jogo.id)}}">Deletar</a>
-            <a class="btn btn-primary badge" href="{{ url_for('jogos.update', id=jogo.id)}}">Editar</a>
+            <a class="btn-deletar" href="{{ url_for('jogos.delete', id=jogo.id)}}">Deletar</a>
+            <a class="btn-editar" href="{{ url_for('jogos.update', id=jogo.id)}}">Editar</a>
         </li>
         {% endfor %}
     </ul>
     {% endfor %}
 </div>
-
-
 
 
 {% endblock %}

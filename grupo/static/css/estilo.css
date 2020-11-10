@@ -1,7 +1,7 @@
 .escudo-mini{
     height: 2em;
 }
-/*
+
 CSS usados por mim mas que vocês não precisam utilizar
 tr td:first-child{
     width: 1%;
@@ -25,8 +25,98 @@ a > li{
 .center{
     display: table;
     margin: 1em auto;
-}*/
+}
 
-.placar {
-    background-color: red;
+.btn-impressao {
+    float: right;
+    border:1px solid #ddd;
+    border-radius:4px;
+    cursor:pointer;
+    font-family:Verdana;
+    font-size:13px;
+    padding:6px 10px;
+    text-decoration:none;
+    background-color: #f9f9f9;
+    color: black;
+}
+
+.form-novo-jogo {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 20px;
+    margin: 30px auto 0;
+    border:1px solid #ddd;
+    border-radius:4px;
+    background-color: #f8f8f8;
+}
+
+h5 {
+    font-weight: bolder;
+}
+.box-input{
+    border:1px solid #ddd;
+    border-radius:4px;
+    width: 35px;
+}
+
+.add-placar {
+    margin: 10px 20px;
+}
+
+.add-cartao-amarelo {
+    padding-left: 18px;
+}
+
+.add-cartao-vermelho {
+    padding-left: 8px;
+}
+
+.add-rodada {
+    padding-left: 16px;
+}
+
+.btn-enviar-jogo {
+    margin: 10px 0 5px 790px;
+}
+
+.btn-deletar {
+    float: right;
+    border:1px solid #ddd;
+    border-radius:4px;
+    cursor:pointer;
+    font-family:Verdana;
+    font-size: 10px;
+    padding:5px 5px;
+    text-decoration:none;
+    background-color: #e27c6e;
+    color: black;
+}
+
+.btn-editar {
+    float: right;
+    margin-right: 5px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    cursor:pointer;
+    font-family:Verdana;
+    font-size: 10px;
+    padding:5px 5px;
+    text-decoration:none;
+    background-color: #f8e26d;
+    color: black;
+}
+
+.btn-adicionar {
+    margin: 0 0 150px 0px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    cursor:pointer;
+    font-family:Verdana;
+    font-size: 20px;
+    padding:5px 5px;
+    text-decoration:none;
+    background-color: #81dd9b;
+    color: black;
+
 }

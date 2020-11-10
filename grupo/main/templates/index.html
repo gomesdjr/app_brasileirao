@@ -26,8 +26,8 @@
 	<tbody>
 		{% for time in times %}
 		<tr>
-			<td><img class="escudo-mini" src="{{ time.escudo }}"></td>
-			<td>{{time.nome}}</td>
+			<td	><img class="escudo-mini" src="{{ time.escudo }}"></td>
+			<td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">{{time.nome}}</td>
 			<td>{{time.pontos}}</td>
 			<td>{{time.jogos | length}}</td>
 			<td>{{time.vitorias}}</td>
@@ -42,7 +42,7 @@
 		{%endfor%}
 	</tbody>
 </table>
-<a href="#" style="float: right;" onclick="impressao()">Imprimir Tabela</a>
+<a class="btn-impressao" href="#" onclick="impressao()">Imprimir Tabela</a>
 	<textarea id="dados" style="display: none;">
 		{% for time in times %}
 			{{time.nome}}|{{time.pontos}}|{{time.jogos | length}}|{{time.vitorias}}|{{time.empates}}|{{time.derrotas}}|{{time.gols_pro}}|{{ time.gols_contra }}|{{time.saldo_gols}}|#
