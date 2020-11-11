@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
-</html>
-
 {% extends "base.html"%}
 
 {% block app_content %}
 <a class="btn btn-success" href="{{ url_for('jogos.create') }}">Adicionar Novo Jogo</a>
+<br>
+<br>
 {% for rodada in jogos %}
 <div>
     <ul class="list-group">
@@ -22,10 +11,12 @@
             RODADA {{ rodada }}
             {% for jogo in jogos[rodada] %}
         </li>
-        
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ jogo.mandante.nome }} {{ jogo.gols_mandante }} x
-            {{ jogo.gols_visitante }} {{ jogo.visitante.nome }}
+            {{ jogo.mandante.nome.upper()[0:3] }} 
+            <img class="escudo-mini" src="{{jogo.mandante.escudo}}" width="60" height="60"> {{ jogo.gols_mandante }} x 
+            {{ jogo.gols_visitante }}
+            <img class="escudo-mini" src="{{jogo.visitante.escudo}}" width="60" height="60">
+            {{ jogo.visitante.nome.upper()[0:3] }}
             <a class="btn-deletar" href="{{ url_for('jogos.delete', id=jogo.id)}}">Deletar</a>
             <a class="btn-editar" href="{{ url_for('jogos.update', id=jogo.id)}}">Editar</a>
         </li>
@@ -33,6 +24,4 @@
     </ul>
     {% endfor %}
 </div>
-
-
 {% endblock %}

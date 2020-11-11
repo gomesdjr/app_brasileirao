@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-<h1> {{ title }}</h1>
+<h1 class="h1-novo-time"> {{ title }}</h1>
 
 <form action="" method="POST" novalidate>
 	{{ form.hidden_tag() }}
@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			{{ form.nome_time.label }} {{ form.nome_time(class="form-control size=2") }}
-			{{ form.escudo.label }} {{ form.escudo(class="form-control") }}
+			{{ form.escudo.label }} {{ form.escudo(class="form-control") }}<br>
 			{{ form.enviar(class="btn btn-success") }}
 		</div>
 	</div>
