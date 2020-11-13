@@ -10,3 +10,7 @@ Corinthians - https://s.glbimg.com/es/sde/f/organizacoes/2019/09/30/Corinthians.
 Bahia - https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/bahia.svg
 Fluminense - https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/fluminense.svg
 Ceará = https://s.glbimg.com/es/sde/f/organizacoes/2019/10/10/ceara.svg
+Goiás = https://s.glbimg.com/es/sde/f/organizacoes/2019/05/01/Goias_SVG.svg
+Bragantino = https://s.glbimg.com/es/sde/f/organizacoes/2019/12/30/svg.svg
+Botafogo = https://s.glbimg.com/es/sde/f/organizacoes/2019/02/04/botafogo-svg.svg
+Vasco = https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/vasco.svg
